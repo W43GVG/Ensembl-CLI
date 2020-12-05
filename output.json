@@ -1,0 +1,102 @@
+{
+  "tags": {
+    "authority": [
+      "Homo sapiens Linnaeus, 1758"
+    ],
+    "scientific_name": [
+      "Homo sapiens"
+    ],
+    "name": [
+      "Homo sapiens"
+    ],
+    "common_name": [
+      "man"
+    ],
+    "genbank_common_name": [
+      "human"
+    ]
+  },
+  "scientific_name": "Homo sapiens",
+  "id": "9606",
+  "children": [
+    {
+      "name": "Homo sapiens subsp. 'Denisova'",
+      "leaf": 1,
+      "scientific_name": "Homo sapiens subsp. 'Denisova'",
+      "id": "741158",
+      "tags": {
+        "equivalent_name": [
+          "Homo sapiens ssp. 'Denisova'",
+          "Homo sapiens ssp. Denisova"
+        ],
+        "common_name": [
+          "Denisovan",
+          "Denisovans"
+        ],
+        "genbank_common_name": [
+          "Denisova hominin"
+        ],
+        "scientific_name": [
+          "Homo sapiens subsp. 'Denisova'"
+        ],
+        "synonym": [
+          "Homo sp. Altai"
+        ],
+        "name": [
+          "Homo sapiens subsp. 'Denisova'"
+        ]
+      }
+    },
+    {
+      "leaf": 1,
+      "name": "Homo sapiens neanderthalensis",
+      "scientific_name": "Homo sapiens neanderthalensis",
+      "id": "63221",
+      "tags": {
+        "type_material": [
+          "Feldhofer 1",
+          "Neanderthal 1"
+        ],
+        "genbank_common_name": [
+          "Neandertal"
+        ],
+        "common_name": [
+          "Neandertal man",
+          "Neanderthal",
+          "Neanderthal man"
+        ],
+        "scientific_name": [
+          "Homo sapiens neanderthalensis"
+        ],
+        "synonym": [
+          "Homo neanderthalensis"
+        ],
+        "name": [
+          "Homo sapiens neanderthalensis"
+        ]
+      }
+    }
+  ],
+  "name": "Homo sapiens",
+  "parent": {
+    "id": "9605",
+    "scientific_name": "Homo",
+    "name": "Homo",
+    "leaf": 0,
+    "tags": {
+      "common_name": [
+        "humans"
+      ],
+      "name": [
+        "Homo"
+      ],
+      "authority": [
+        "Homo Linnaeus, 1758"
+      ],
+      "scientific_name": [
+        "Homo"
+      ]
+    }
+  },
+  "leaf": 0
+}
