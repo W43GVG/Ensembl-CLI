@@ -1,2 +1,3 @@
 # Ensembl-CLI
- CLI interface for Ensembl queries.
+ ![](https://i.imgur.com/5ULS6ry.png)
+ CLI interface for Ensembl queries
