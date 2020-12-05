@@ -1,7 +1,7 @@
 import sys, requests, fire, json, xml
 
 server = "https://rest.ensembl.org"
-exp_message = "\nExport output?\nIf Yes, it will overwrite output.json\nY or N\n"
+exp_message = "\nExport output?\nIf Yes, it will overwrite output.(json/xml)\nY or N\n"
 
 def GET_tax_id(id, format):
     """
@@ -28,6 +28,10 @@ def GET_tax_id(id, format):
 
         print(r.text)
 
+        exp = input(exp_message)
+        if exp == "Y":
+            with open("output.xml", "w") as xml_f:
+                xml_f.write(r.text)
 
 def GET_tax_name(name, format):
     """
@@ -54,6 +58,11 @@ def GET_tax_name(name, format):
 
         print(r.text)
 
+        exp = input(exp_message)
+        if exp == "Y":
+            with open("output.xml", "w") as xml_f:
+                xml_f.write(r.text)
+
 def GET_tax_classification(id, format):
     """
     Return the taxonomic classification of a taxon node
@@ -78,6 +87,11 @@ def GET_tax_classification(id, format):
         r = requests.get(url, headers = {"Content-Type" : "application/xml"})
 
         print(r.text)
+
+        exp = input(exp_message)
+        if exp == "Y":
+            with open("output.xml", "w") as xml_f:
+                xml_f.write(r.text)
 
 if __name__ == "__main__":
     fire.Fire({
