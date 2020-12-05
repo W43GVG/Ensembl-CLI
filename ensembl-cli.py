@@ -14,11 +14,9 @@ def GET_tax_id(id):
     r = requests.get(url, headers = {"Content-Type" : "application/json"})
 
     data = json.loads(r.text)
-    
     print(json.dumps(data, indent = 2))
     
     exp = input(exp_message)
-
     if exp == "Y":
         with open("output.json", "w") as json_f:
             json.dump(data, json_f, indent=2)
@@ -34,11 +32,9 @@ def GET_tax_name(name):
     r = requests.get(url, headers = {"Content-Type" : "application/json"})
 
     data = json.loads(r.text)
-    
     print(json.dumps(data, indent = 2))
     
     exp = input(exp_message)
-
     if exp == "Y":
         with open("output.json", "w") as json_f:
             json.dump(data, json_f, indent=2)
