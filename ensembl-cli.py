@@ -1,64 +1,83 @@
-import sys, requests, fire, json
+import sys, requests, fire, json, xml
 
 server = "https://rest.ensembl.org"
 exp_message = "\nExport output?\nIf Yes, it will overwrite output.json\nY or N\n"
 
-def GET_tax_id(id):
+def GET_tax_id(id, format):
     """
     Search for a taxonomic term by its identifier or name
         | id: NCBI taxon id or a name
-        | http://rest.ensembl.org/documentation/info/taxonomy_id
+        | format: either JSON or XML
     """
     ext = "/taxonomy/id/"
     exp = None
     url = server + ext + str(id) + "?"
-    r = requests.get(url, headers = {"Content-Type" : "application/json"})
-
-    data = json.loads(r.text)
-    print(json.dumps(data, indent = 2))
     
-    exp = input(exp_message)
-    if exp == "Y":
-        with open("output.json", "w") as json_f:
-            json.dump(data, json_f, indent=2)
+    if format == "json":
+        r = requests.get(url, headers = {"Content-Type" : "application/json"})
 
-def GET_tax_name(name):
+        data = json.loads(r.text)
+        print(json.dumps(data, indent = 2))
+        
+        exp = input(exp_message)
+        if exp == "Y":
+            with open("output.json", "w") as json_f:
+                json.dump(data, json_f, indent=2)
+    elif format == "xml":
+        r = requests.get(url, headers = {"Content-Type" : "application/xml"})
+
+        print(r.text)
+
+
+def GET_tax_name(name, format):
     """
     Search for a taxonomic id by a non-scientific name
         | name: A non-scientific species name. Can include SQL wildcards
-        | http://rest.ensembl.org/documentation/info/taxonomy_name
+        | format: either JSON or XML
     """
     ext = "/taxonomy/name/"
     exp = None
     url = server + ext + str(name) + "?"
-    r = requests.get(url, headers = {"Content-Type" : "application/json"})
 
-    data = json.loads(r.text)
-    print(json.dumps(data, indent = 2))
-    
-    exp = input(exp_message)
-    if exp == "Y":
-        with open("output.json", "w") as json_f:
-            json.dump(data, json_f, indent=2)
+    if format == "json":
+        r = requests.get(url, headers = {"Content-Type" : "application/json"})
 
-def GET_tax_classification(id):
+        data = json.loads(r.text)
+        print(json.dumps(data, indent = 2))
+        
+        exp = input(exp_message)
+        if exp == "Y":
+            with open("output.json", "w") as json_f:
+                json.dump(data, json_f, indent=2)
+    elif format == "xml":
+        r = requests.get(url, headers = {"Content-Type" : "application/xml"})
+
+        print(r.text)
+
+def GET_tax_classification(id, format):
     """
     Return the taxonomic classification of a taxon node
         | id: A taxon identifier. Can be a NCBI taxon id or a name
-        | http://rest.ensembl.org/documentation/info/taxonomy_classification
+        | format: either JSON or XML
     """
     ext = "/taxonomy/classification/"
     exp = None
     url = server + ext + str(id) + "?"
-    r = requests.get(url, headers = {"Content-Type" : "application/json"})
 
-    data = json.loads(r.text)
-    print(json.dumps(data, indent = 2))
-    
-    exp = input(exp_message)
-    if exp == "Y":
-        with open("output.json", "w") as json_f:
-            json.dump(data, json_f, indent=2)
+    if format == "json":
+        r = requests.get(url, headers = {"Content-Type" : "application/json"})
+
+        data = json.loads(r.text)
+        print(json.dumps(data, indent = 2))
+        
+        exp = input(exp_message)
+        if exp == "Y":
+            with open("output.json", "w") as json_f:
+                json.dump(data, json_f, indent=2)
+    elif format == "xml":
+        r = requests.get(url, headers = {"Content-Type" : "application/xml"})
+
+        print(r.text)
 
 if __name__ == "__main__":
     fire.Fire({
