@@ -15,3 +15,13 @@
  ```
  python ensembl-cli.py COMMANDS
  ```
+
+ Example:
+ ```
+ python ensemble-cli.py tax_classif 7819 json
+ ```
+ 
+ ## License, notes
+ W43GVG under the MIT License.
+
+ Yates, Andrew et al. “The Ensembl REST API: Ensembl Data for Any Language.” Bioinformatics 31.1 (2014): 143–145.

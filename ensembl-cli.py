@@ -59,6 +59,7 @@ def GET_tax_name(name, format):
         print(r.text)
 
         exp = input(exp_message)
+
         if exp == "Y":
             with open("output.xml", "w") as xml_f:
                 xml_f.write(r.text)
